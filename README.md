@@ -13,9 +13,25 @@ que una simple password no es capaz de ofrecer. Además de esto, hace posible qu
 al servidro sin necesidad de recordar contraseñas largas.
 
 ## Windows
-Antes de comenzar con el tutorial hay que tener en cuenta que el uso de del par de claves pública y privada implica que 
-la privada sólo va a permanecer en el cliente mientras que la pública permanece en el servidor, en el archivo ***` /home/usuario/.ssh/authorized_keys`***
-por defecto, aunque se puede modificar en el archivo ***` /etc/ssh/sshd_config`*** .
 
-# Generar las claves
-En esta práctica vamos a utilizar como servidor Ubuntu Server por 
+En esta práctica vamos a utilizar como servidor Ubuntu Server y como cliente Windows 10 Pro y para comenzar descargaremos 
+[putty](https://www.ssh.com/ssh/putty/download#sec-Download-PuTTY-installation-package-for-Windows) ,cliente SSH entre 
+otros con licencia libre actualmente disponible en varias plataformas Unix. [Más información PuTTY.](https://www.google.com/search?q=putty&oq=putty++&aqs=chrome..69i57j0j35i39l2j0l2.3415j1j8&sourceid=chrome&ie=UTF-8)
+
+![](capturas/puttyGem.PNG)
+
+### Generar las claves
+
+Primeramente generaremos las claves pulsando el botón generate. Guardaremos en un notepadd la clave pública y la privada 
+en una ubicación de tu ordenador.
+
+![](capturas/generarKey.PNG)
+
+Generadas y guardadas la claves [descargaremos winSCP](https://winscp.net/eng/download.php) que es una aplicación de 
+software libre que funciona como cliente SFTP gráfico para Windows y que emplea SSH. [Ver más información.](https://es.wikipedia.org/wiki/WinSCP)
+
+![](capturas/windscp.PNG)
+
+Instalado el programa habrá que introducir la IP del servidor y su correspondiente contraseña podremos visualizar los 
+paneles de ambos equipos como se puede apreciar en la imagen superior. Ayudándonos de winSCP crearemos en nuestro 
+directorio de usuario del panel del servidor el directorio ***`.ssh/AuthorizedKeys`*** 
