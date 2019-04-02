@@ -38,3 +38,33 @@ Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del 
 en el que copiaremos el archivo guardado anteriormente de la clave pública. No hay que olvidarse de acceder en el equipo
 servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config`*** para descomentar la línea 
 ***#Authorizedkeysfile...*** .
+
+![](capturas/descomentarSshconfig.PNG)
+
+### Comprobar conexión
+
+Hecho esto es hora de comprobar la conexión por lo que iremos a putty para ejecutarlo. En la sección Session introduciremos los
+datos del servidor remoto: IP o host (campo “Host Name (or IP address)“) y puerto (campo “Port“).
+
+![](capturas/conexionEjecPutty.PNG)
+
+En la sección Connection -> Data introduciremos el nombre de usuario (campo “Auto-login username”) en el servidor remoto para 
+el que estamos configurando las claves.
+
+![](capturas/conecctiondata.PNG)
+
+Posteriormente iremos a  la sección Connection -> SSH -> Auth y le indicamos la ubicación de la clave privada (extensión .ppk) 
+creada previamente.
+
+![](capturas/ubicacionClavePrivada.PNG)
+
+Hecho esto guardaremos la sesión con un nombre determinado, que en este caso será la IP del servidor al que queremos 
+conectar, ya que es un servidor de la red local y lo identificamos fácilmente. Para ello vamos a la sección Session, seleccionamos
+una sesión existente (o creamos una nueva introduciendo el nombre en el campo “Saved Sessions“) y hacemos clic en el botón “Save“.
+
+![](capturas/saveSession.PNG)
+
+Con esto ya estaría todo configurado para conectarnos al servidor. Para ello bastará con hacer doble clic sobre la sesión 
+guardada o bien pulasar al botón open.
+
+![](capturas/comprobarConexion.PNG)
