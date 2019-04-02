@@ -36,5 +36,5 @@ Instalado el programa habrá que introducir la IP del servidor y su correspondie
 ambos equipos. Hecho esto podremos visualizar los paneles de ambos como se puede apreciar en la imagen superior. 
 Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del servidor el directorio ***`.ssh/AuthorizedKeys`*** 
 en el que copiaremos el archivo guardado anteriormente de la clave pública. No hay que olvidarse de acceder en el equipo
-servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config` *** para descomentar la línea 
-*** #Authorizedkeysfile...*** .
+servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config`*** para descomentar la línea 
+***#Authorizedkeysfile...*** .
