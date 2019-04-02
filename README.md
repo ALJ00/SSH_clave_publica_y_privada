@@ -32,6 +32,9 @@ software libre que funciona como cliente SFTP gráfico para Windows y que emplea
 
 ![](capturas/windscp.PNG)
 
-Instalado el programa habrá que introducir la IP del servidor y su correspondiente contraseña podremos visualizar los 
-paneles de ambos equipos como se puede apreciar en la imagen superior. Ayudándonos de winSCP crearemos en nuestro 
-directorio de usuario del panel del servidor el directorio ***`.ssh/AuthorizedKeys`*** 
+Instalado el programa habrá que introducir la IP del servidor y su correspondiente contraseña para que estén conectados
+ambos equipos. Hecho esto podremos visualizar los paneles de ambos como se puede apreciar en la imagen superior. 
+Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del servidor el directorio ***`.ssh/AuthorizedKeys`*** 
+en el que copiaremos el archivo guardado anteriormente de la clave pública. No hay que olvidarse de acceder en el equipo
+servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config` *** para descomentar la línea 
+*** #Authorizedkeysfile...*** .
