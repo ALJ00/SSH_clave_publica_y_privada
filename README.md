@@ -34,7 +34,7 @@ software libre que funciona como cliente SFTP gráfico para Windows y que emplea
 
 Instalado el programa habrá que introducir la IP del servidor y su correspondiente contraseña para que estén conectados
 ambos equipos. Hecho esto podremos visualizar los paneles de ambos como se puede apreciar en la imagen superior. 
-Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del servidor el archivo ***`.ssh/authorized_Keys`*** 
+Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del servidor el archivo ***`.ssh/authorized_keys`*** 
 en el que copiaremos la clave pública generada anteriormente. No hay que olvidarse de acceder en el equipo
 servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config`*** para descomentar la línea 
 ***#Authorizedkeysfile...*** .
@@ -75,4 +75,29 @@ Para la siguiente práctica utilizaremos dos equipos Ubuntu, desktop como client
 
 ### Generar claves
 
-Ayudándonos del comando ***``***
+Ayudándonos del comando ***`ssh-keygen`*** creamos la clave pública y privada en el equipo cliente.
+
+![](capturas/ubuntuKeys.PNG)
+
+Tal como se muestra en la imagen superior se crean las dos claves e indica dónde se crean.
+
+### Copiar la clave pública en el equipo servidor
+
+Generadas la claves el siguiente paso va a ser copiar la clave pública ssh al servidor remoto. Para ello utilizamos el comando
+***`scp /home/sr/.ssh/id_rsa.pub usuario@ip:home`*** . Aquí estamos indicando de qué archivo del cliente tenemos que enviar
+la clave y dónde la queremos dejar en el servidor  ***`usuario@ip:home`*** .
+
+![](capturas/envioClaveUbuntu.PNG)
+
+Ejecutado el comando nos pedirá usuario y contraseña y el envío se habrá realizado como se aprecia en la imagen superior.
+Posteriormente ya podremos conectarnos con el servidor sin necesidad de introducir ninguna clave. Podemos comprobarlo mediante
+el comando ***´ssh usuarioservidor@ip_servidor´*** 
+
+![](capturas/conexionSin.PNG)
+
+Como se aprecia en la imagen ubuntuserver nos da la vienbenida en vez de pedirnos alguna clave y podemos notar como ya estamos
+en el equipo remoto.
+
+Por último quedaría probar en el servidor que se ha copiado correctamente.
+
+
