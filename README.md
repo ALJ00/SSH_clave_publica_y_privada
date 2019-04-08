@@ -34,8 +34,8 @@ software libre que funciona como cliente SFTP gráfico para Windows y que emplea
 
 Instalado el programa habrá que introducir la IP del servidor y su correspondiente contraseña para que estén conectados
 ambos equipos. Hecho esto podremos visualizar los paneles de ambos como se puede apreciar en la imagen superior. 
-Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del servidor el directorio ***`.ssh/AuthorizedKeys`*** 
-en el que copiaremos el archivo guardado anteriormente de la clave pública. No hay que olvidarse de acceder en el equipo
+Ayudándonos de winSCP crearemos en nuestro directorio de usuario del panel del servidor el archivo ***`.ssh/authorized_Keys`*** 
+en el que copiaremos la clave pública generada anteriormente. No hay que olvidarse de acceder en el equipo
 servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config`*** para descomentar la línea 
 ***#Authorizedkeysfile...*** .
 
@@ -65,6 +65,14 @@ una sesión existente (o creamos una nueva introduciendo el nombre en el campo �
 ![](capturas/saveSession.PNG)
 
 Con esto ya estaría todo configurado para conectarnos al servidor. Para ello bastará con hacer doble clic sobre la sesión 
-guardada o bien pulasar al botón open.
+guardada o bien pulsar el botón open.
 
 ![](capturas/comprobarConexion.PNG)
+
+## Ubuntu
+
+Para la siguiente práctica utilizaremos dos equipos Ubuntu, desktop como cliente y server como equipo servidor. 
+
+### Generar claves
+
+Ayudándonos del comando ***``***
