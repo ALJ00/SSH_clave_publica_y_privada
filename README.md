@@ -1,3 +1,6 @@
+
+![](capturas/logo.png)
+
 # SSH clave pública y privada
 
 SSH (o Secure SHell) es el nombre de un protocolo y del programa que lo implementa cuya principal función es el acceso 
