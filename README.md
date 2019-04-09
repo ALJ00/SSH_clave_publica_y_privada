@@ -91,13 +91,30 @@ la clave y dónde la queremos dejar en el servidor  ***`usuario@ip:home`*** .
 
 Ejecutado el comando nos pedirá usuario y contraseña y el envío se habrá realizado como se aprecia en la imagen superior.
 Posteriormente ya podremos conectarnos con el servidor sin necesidad de introducir ninguna clave. Podemos comprobarlo mediante
-el comando ***´ssh usuarioservidor@ip_servidor´*** 
+el comando ***`ssh usuarioservidor@ip_servidor`*** 
 
 ![](capturas/conexionSin.PNG)
 
 Como se aprecia en la imagen ubuntuserver nos da la vienbenida en vez de pedirnos alguna clave y podemos notar como ya estamos
 en el equipo remoto.
 
-Por último quedaría probar en el servidor que se ha copiado correctamente.
+Por último quedaría probar en el servidor que la clave se ha enviado y que se ha copiado correctamente.
+
+![](capturas/comprobacionServidor.PNG)
+
+Como se puede apreciar en la imagen observamos que al ejecutar el comando de copia en el cliente ***`scp /home/sr/.ssh/id_rsa.pub usuario@ip:home`***
+al poner en el comando ***:home*** estamos indicando que en el servidor queremos que se copie la clave en ese directorio. 
+Por lo tanto en el servidor moveremos el archivo ayudándonos del comando ***`cat`*** , el cual nos permite realizar varias 
+acciones:
+* Mostrar archivos de texto.
+* Copiar archivos de texto en un documento nuevo.
+* Agregar el contenido de un archivo de texto al final de otro archivo de texto, combinándolos.
+* Mostrar archivos de texto.
+
+Como vemos hemos ido al directorio home creado donde se encuentra la clave ***`cat home`*** y hemos copiado el archivo y
+a posteriori hemos copiado la clave en el archivo authorized_keys ***`cat home > .ssh/authorized_keys`*** . 
+
+
+
 
 
