@@ -13,7 +13,7 @@ para poder ejecutar programas gráficos remotamente. El protocolo TCP asignado e
 Si configuramos este protocolo de conexión utilizando clave pública y privada, la autenticación de SSH tendrá un "plus" 
 en lo que se refiere a la seguridad del servidor. El uso de estas claves en SSH implica un cifrado [criptográfico asimétrico](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica)
 que una simple password no es capaz de ofrecer. Además de esto, hace posible que los usuarios puedan realizar conexiones
-al servidro sin necesidad de recordar contraseñas largas.
+al servidor sin necesidad de recordar contraseñas largas.
 
 ## Windows
 
@@ -25,8 +25,9 @@ otros con licencia libre actualmente disponible en varias plataformas Unix. [Má
 
 ### Generar las claves
 
-Primeramente generaremos las claves pulsando el botón generate. Guardaremos en un notepadd la clave pública y la privada 
-en una ubicación de tu ordenador.
+Primeramente generaremos las claves pulsando el botón generate. Guardaremos tanto la clave pública y la privada 
+en una ubicación del ordenador y habrá que copiar posteriormente la clave pública para pegarla en un archivo llamado
+authorized_keys que habrá que crear en el servidor. 
 
 ![](capturas/generarKey.PNG)
 
@@ -46,7 +47,7 @@ servidor al archivo sshd_config mediante el comando ***`sudo nano sshd_config`**
 
 ### Comprobar conexión
 
-Hecho esto es hora de comprobar la conexión por lo que iremos a putty para ejecutarlo. En la sección Session introduciremos los
+Hecho esto es hora de comprobar la conexión por lo que iremos a Putty para ejecutarlo. En la sección Session introduciremos los
 datos del servidor remoto: IP o host (campo “Host Name (or IP address)“) y puerto (campo “Port“).
 
 ![](capturas/conexionEjecPutty.PNG)
@@ -74,7 +75,7 @@ guardada o bien pulsar el botón open.
 
 ## Ubuntu
 
-Para la siguiente práctica utilizaremos dos equipos Ubuntu, desktop como cliente y server como equipo servidor. 
+Para la siguiente práctica utilizaremos dos equipos Ubuntu, Desktop como cliente y Server como equipo servidor. 
 
 ### Generar claves
 
@@ -98,7 +99,7 @@ el comando ***`ssh usuarioservidor@ip_servidor`***
 
 ![](capturas/conexionSin.PNG)
 
-Como se aprecia en la imagen ubuntuserver nos da la vienbenida en vez de pedirnos alguna clave y podemos notar como ya estamos
+Como se aprecia en la imagen Ubuntuserver nos da la vienbenida en vez de pedirnos alguna clave y podemos notar que ya estamos
 en el equipo remoto.
 
 Por último quedaría probar en el servidor que la clave se ha enviado y que se ha copiado correctamente.
@@ -106,7 +107,7 @@ Por último quedaría probar en el servidor que la clave se ha enviado y que se 
 ![](capturas/comprobacionServidor.PNG)
 
 Como se puede apreciar en la imagen observamos que al ejecutar el comando de copia en el cliente ***`scp /home/sr/.ssh/id_rsa.pub usuario@ip:home`***
-al poner en el comando ***:home*** estamos indicando que en el servidor queremos que se copie la clave en ese directorio. 
+al poner en el comando ***:home*** estamos indicando que en el servidor queremos que se copie la clave en ese archivo. 
 Por lo tanto en el servidor moveremos el archivo ayudándonos del comando ***`cat`*** , el cual nos permite realizar varias 
 acciones:
 * Mostrar archivos de texto.
